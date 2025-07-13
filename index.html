@@ -9,6 +9,8 @@
   <script src="script.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
  
 
@@ -27,7 +29,7 @@
     <p class="typing-text" id="typing"></p>
     <div class="buttons">
       <a href="#projects" class="btn btn-gradient">View My Work</a>
-      <a href="resume.pdf" class="btn btn-gradient" download >Download Resume</a>
+      <a href="https://drive.google.com/file/d/1JYcQ7Lu5zyHDlT50cj2Kzm8Y5H2-pRPx/view?usp=drivesdk" class="btn btn-gradient" download >Download Resume</a>
     </div>
     <div class="social-icons">
   <a href="https://github.com/Charan-2004" target="_blank" class="icon-wrap" title="GitHub"><i class="fab fa-github"></i></a>
@@ -115,6 +117,25 @@ Aimed to reduce congestion at EV stations, enhancing user convenience and optimi
         <li>C<div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div></li>
       </ul>
     </section>
+   <section id="tools" class="reveal">
+  <h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/843/843310.png" style="width: 22px; vertical-align: middle; margin-right: 0.5rem;" />
+    Tools I Use
+  </h2>
+
+  <div class="tools-grid">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" title="VS Code" alt="VS Code">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" title="GitHub" alt="GitHub">
+    <img src="https://assets.vercel.com/image/upload/front/favicon/vercel/76x76.png" title="Vercel" alt="Vercel">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" title="Figma" alt="Figma">
+
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" title="Arduino IDE" alt="Arduino">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" title="Selenium IDE" alt="Selenium">
+    <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" title="Postman" alt="Postman">
+  </div>
+</section>
+
+
 
     <section>
       <h2>Experience</h2>
@@ -143,6 +164,8 @@ Aimed to reduce congestion at EV stations, enhancing user convenience and optimi
     </section>
 
     <section>
+    
+
     <section id="certificates/Achievements" class="reveal">
   <h2>
   <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" style="width: 28px; vertical-align: middle; margin-right: 0.5rem;" />
@@ -212,6 +235,7 @@ Aimed to reduce congestion at EV stations, enhancing user convenience and optimi
   cursor: pointer;
   z-index: 99;">↑</button>
 
+<!--
   <div id="otto-toggle">
   🤖
 </div>
@@ -220,6 +244,7 @@ Aimed to reduce congestion at EV stations, enhancing user convenience and optimi
   <span>💡 Otto Suggests:</span>
   <p id="otto-text">Loading Otto's wisdom...</p>
 </div>
+-->
 
 
 <div id="toast" class="toast"></div>
@@ -229,14 +254,64 @@ Aimed to reduce congestion at EV stations, enhancing user convenience and optimi
   <button class="easter-egg" title="Click for magic">🪄</button>
   <div class="live-status"><span id="dev-status">Loading...</span></div>
 </div>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+<!-- its for dark/light mode
+<style>
+    body.light-mode {
+      background: #ffffff;
+      color: #000000;
+    }
+    .light-mode .card {
+      background: rgba(0, 0, 0, 0.05);
+      color: #000;
+    }
+    .light-mode .btn-gradient {
+      background: linear-gradient(45deg, #2cb67d, #7f5af0);
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: #7f5af0;
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("light-mode");
+      const isLight = document.body.classList.contains("light-mode");
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    }
+    window.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <button class="theme-toggle" onclick="toggleTheme()"> Toggle Theme</button>
+
+-->
+<button class id="themeToggle" title="Toggle Theme">🌗</button>
 
 
 
 </body>
 </html>
 
-<!-- 
-     2 you have to put resume link
-    
-     4 you have to put driven by what
-     5 you have to put on vercel-->
+

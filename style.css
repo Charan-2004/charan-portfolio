@@ -165,7 +165,7 @@ canvas#particles-js {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: linear-gradient(270deg, #1d075f, #033d25, #0f0f4b);
+  background: linear-gradient(270deg, #270883, #035734, #090965);
   background-size: 600% 600%;
   animation: gradientMove 10s ease infinite;
 }
@@ -216,7 +216,7 @@ html {
   height: 100%;
   z-index: 9999;
 }
-/*otto suggests*/
+/*otto suggests*//*
 #otto-toggle {
   position: fixed;
   bottom: 25px;
@@ -272,6 +272,7 @@ html {
     transform: translateY(0);
   }
 }
+*/
 
 .toast {
   position: fixed;
@@ -482,3 +483,82 @@ footer {
     text-shadow: 0 0 14px #7f5af0cc, 0 0 26px #2cb67dcc;
   }
 }
+
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.tools-grid img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 4px #2cb67d55);
+  border-radius: 6px;
+}
+
+.tools-grid img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px #7f5af0cc);
+}
+
+:root {
+  --bg-light: linear-gradient(270deg, #6bbd6f, #ecd576, #3b81be);
+  --bg-dark: linear-gradient(270deg, #1d075f, #033d25, #0f0f4b);
+}
+
+body {
+  --bg-active: var(--bg-dark);
+}
+
+body.light-mode {
+  --bg-active: var(--bg-light);
+}
+
+canvas#particles-js {
+  background: var(--bg-active);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+#themeToggle {
+    position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 1000;
+  background: #7f5af0;
+  color: white;
+  border: none;
+  padding: 5px 5px 5px 5px;
+  font-size: 1rem;
+  border-radius: 25px;
+  
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#themeToggle:hover {
+  background: #2cb67d;
+}
+
+body.light-mode {
+      background: #ffffff;
+      color: #000000;
+    }
+
+

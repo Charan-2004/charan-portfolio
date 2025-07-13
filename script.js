@@ -131,8 +131,8 @@ window.addEventListener("resize", () => {
 ctx.globalCompositeOperation = "lighter";
 
 
-
 /*otto suggests */
+/*
 const ottoTips = [
   "Check out AutoApplyAI — it's job-ready 💼",
   "Otto is not just a bot, he's *the* assistant 🤖",
@@ -157,7 +157,7 @@ updateOttoTip();
 ottoBtn.addEventListener("click", () => {
   ottoBox.style.display = ottoBox.style.display === "none" ? "block" : "none";
 });
-
+ */
 
 
 /* email message */
@@ -212,7 +212,7 @@ form.addEventListener("submit", async function (e) {
 const devStatus = document.getElementById("dev-status");
 const phrases = [
   "🚀 Shipping ideas",
-  "🎯 Working on AutoApplyAI",
+  "🎯 Check out AutoApplyAI",
   "🤖 Training Otto",
   "🧠 Learning new stuff",
   "🔧 Debugging reality"
@@ -228,3 +228,31 @@ setInterval(() => {
 document.querySelector('.easter-egg').addEventListener('click', () => {
   alert("✨ You found the magic! Otto says hi 💬");
 });
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("themeToggle");
+
+  if (!themeToggle) {
+    console.error("Theme toggle button not found!");
+    return;
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    // Update emoji icon
+    const isLight = document.body.classList.contains("light-mode");
+    themeToggle.textContent = isLight ? "🌙" : "☀️";
+  });
+});
+
+
+/* left */
+ const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('light-mode');
+    document.getElementById('particles-js').style.background = document.body.classList.contains('light-mode')
+      ? 'linear-gradient(270deg, #f0f0f0, #dbe4f0, #f6f6f6)'
+      : 'linear-gradient(270deg, #1d075f, #033d25, #0f0f4b)';
+  });
