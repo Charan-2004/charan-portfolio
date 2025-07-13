@@ -1,0 +1,484 @@
+/* ==== style.css ==== */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+      
+  color: #f4f4f4;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+}
+
+.hero h1 span {
+  color: #7f5af0;
+}
+
+.typing-text {
+  font-size: 1.2rem;
+  color: #ccc;
+  min-height: 2em;
+}
+
+.buttons .btn {
+  margin: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.btn-gradient {
+  background: linear-gradient(45deg, #7f5af0, #2cb67d);
+  color: #fff;
+}
+
+.btn-dark {
+  background: #16161a;
+  color: #fff;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  margin: 0 0.6rem;
+  color: #fff;
+}
+
+section {
+  margin: 3rem 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08); /* semi-transparent glassy */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 6px 20px rgba(127, 90, 240, 0.4);
+}
+
+.badges span {
+  display: inline-block;
+  background: #2cb67d;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.skills-list li {
+  margin: 1rem 0;
+}
+
+.skill-bar {
+  background: #555;
+  border-radius: 10px;
+  height: 12px;
+  margin-top: 0.3rem;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  background: linear-gradient(45deg, #7f5af0, #2cb67d);
+  height: 100%;
+  width: 0;
+  width: var(--width);
+  animation: grow 10s ease forwards;
+}
+
+
+@keyframes fillSkill {
+  to {
+    width: inherit;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea {
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: #fff;
+}
+
+form button {
+  background: #7f5af0;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  background: #1f1f2e;
+  font-size: 0.9rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+canvas#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(270deg, #1d075f, #033d25, #0f0f4b);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+ 
+/*background: linear-gradient(45deg, #7f5af0, #2cb67d);*/
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .skills-list li {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  section {
+    margin: 2rem 1rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+#cursorCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+/*otto suggests*/
+#otto-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #7f5af0;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(127, 90, 240, 0.5);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+#otto-toggle:hover {
+  transform: scale(1.1);
+}
+
+#otto-suggests {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  max-width: 260px;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(127, 90, 240, 0.3);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #fff;
+  z-index: 999;
+  display: none;
+  animation: fadeInUp 0.4s ease;
+}
+
+#otto-suggests span {
+  font-weight: 600;
+  color: #2cb67d;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2cb67d;
+  color: white;
+  padding: 0.9rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 9999;
+  animation: fadeinout 3s ease forwards;
+}
+
+.toast.error {
+  background: #ff4e4e;
+}
+
+@keyframes fadeinout {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+.social-icons {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; /* smaller than before */
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #7f5af0, #2cb67d);
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 0 10px #00000033;
+  cursor: pointer;
+}
+
+.icon-wrap i {
+  font-size: 1.1rem;
+}
+
+.icon-wrap:hover {
+  transform: scale(1.15) rotateZ(3deg);
+  box-shadow: 0 0 12px #7f5af0aa;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(127, 90, 240, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(127, 90, 240, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(127, 90, 240, 0);
+  }
+}
+
+
+.top-left-cool {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 1000;
+}
+
+.easter-egg {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.live-status {
+  background: linear-gradient(45deg, #7f5af0, #2cb67d);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  animation: pulseStatus 2.5s infinite;
+}
+
+@keyframes pulseStatus {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(44, 182, 125, 0.4); }
+  50% { box-shadow: 0 0 12px 6px rgba(44, 182, 125, 0.2); }
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.card-footer .badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.view-code-btn {
+  background: linear-gradient(45deg, #7f5af0, #2cb67d);
+  color: white;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.view-code-btn:hover {
+  background: linear-gradient(45deg, #2cb67d, #7f5af0);
+  box-shadow: 0 0 8px #2cb67d88;
+  transform: scale(1.05);
+}
+
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.cert-list {
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.cert-list li {
+  margin: 0.6rem 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #1f1f2e;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footer-quote {
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #7f5af0;
+  animation: fadeInUp 1.5s ease-in-out, glowPulse 2.5s ease-in-out infinite;
+  text-shadow: 0 0 8px #7f5af0aa, 0 0 16px #2cb67daa;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 8px #7f5af0aa, 0 0 16px #2cb67daa;
+  }
+  50% {
+    text-shadow: 0 0 14px #7f5af0cc, 0 0 26px #2cb67dcc;
+  }
+}
